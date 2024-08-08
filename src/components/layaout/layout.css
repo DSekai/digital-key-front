@@ -1,0 +1,45 @@
+.navbar {
+  background-color: #2C2C2C;
+  height: 3.5rem;
+  width: 100%;
+  padding: 0 2%;
+  
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  color: #ccc;
+  
+  place-content: center;
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+
+  z-index: 60;
+
+  .main {
+    width: 66rem;
+
+    display: flex;
+    /* justify-content: space-between; */
+    position: relative;
+    margin: auto;
+
+    .options {
+      display: flex;
+      /* flex-grow: 1; */
+    }
+
+    .menu-logo {
+      width: 34px;
+      height: 34px;
+      fill: #fff;
+    }
+
+    .cart {
+      display: flex;
+      float: right;
+    }
+
+  }
+}
