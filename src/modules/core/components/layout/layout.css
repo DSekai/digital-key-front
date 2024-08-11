@@ -3,13 +3,13 @@
   height: 3.5rem;
   width: 100%;
   padding: 0 2%;
-  
+
   display: flex;
   position: fixed;
   top: 0;
   left: 0;
   color: #ccc;
-  
+
   place-content: center;
   box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.3);
   box-sizing: border-box;
@@ -25,88 +25,104 @@
 
     align-items: center;
 
-    > a{
-      cursor: pointer;
-    }
-
     .options {
       display: flex;
       flex-grow: 1;
       gap: 2rem;
       margin-left: 1.8rem;
 
-      > div {
+      >div {
         display: flex;
         align-items: center;
         position: relative;
+        cursor: pointer;
 
-        > svg {
-          margin-top: 0.2rem; 
+        >svg {
+          margin-top: 0.2rem;
         }
 
-        > p {
+        >p {
           transition: color 0.3s ease;
         }
 
-        &:hover > p {
+        &:hover>p {
           color: white;
           cursor: pointer;
         }
 
         .menu-triangle {
+          visibility: hidden;
+
           border-left: 9px solid transparent;
           border-right: 9px solid transparent;
           border-bottom: 9px solid #fff;
-          display: none;
+          /* border-bottom: 9px solid transparent; */
           position: absolute;
           top: auto;
-          bottom: 0;
+          bottom: -10px;
           right: 0;
           left: auto;
           z-index: 3;
-        }
+          opacity: 1;
 
-        .active {
-          display: block;
+          transition: transform .25s ease-in;
         }
 
         .sub-menu {
           position: absolute;
           z-index: 2;
-          height: 199px;
-          width: 200px;
+          width: 14.3rem;
           background-color: #ffffffc9;
-          top: 3.37rem;
-          color:black;
+          top: 6.84rem;
+          color: black;
+          opacity: 0;
 
           display: flex;
+          visibility: hidden;
           flex-direction: column;
           padding: .5em .2em;
+
+          transition: transform 250ms, opacity 1s;
 
           .selection {
             display: flex;
             justify-content: space-between;
 
+            position: relative;
+
             &:hover {
-              background-color: #E6E6E6;;
+              background-color: #E6E6E6;
+
+              .arrow-simple {
+                display: none;
+              }
+
+              .arrow-double {
+                display: block;
+              }
+
+              .menu-category {
+                display: flex;
+              }
+
             }
 
-            > p {
+            >p {
               margin: 0;
               padding: 0.2em .4em;
               font-size: 15px;
             }
 
-            > div {
+            >div {
               display: flex;
               align-items: center;
               height: 100%;
 
-              > svg {
+              >svg {
                 height: 75%;
               }
 
-              .arrow-simple{
+              .arrow-simple {
                 display: block;
               }
 
@@ -115,12 +131,87 @@
               }
             }
 
-            &:hover {
-              .arrow-simple {
-                display: none;
-              }
-              .arrow-double {
-                display: block;
+            .menu-category {
+              display: none;
+              flex-direction: column;
+              position: absolute;
+              left: 101%;
+              top: -.5rem;
+              place-content: center;
+
+              height: 100%;
+              background-color: #E6E6E6;
+              min-height: 469px;
+              color: black;
+
+              padding: 0 48px 10px;
+
+              .products {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
+
+                .card {
+                  width: 12.25rem;
+
+                  .header-card {
+                    background: green;
+                    height: 110px;
+                  }
+
+                  .body-card {
+                    background-color: #dad9d9;
+                    display: flex;
+                    justify-content: space-between;
+                    height: 36px;
+                    /* padding: .35rem .2rem; */
+                    padding: 0 .4rem;
+                    align-items: center;
+
+                    .plataforms {
+                      color: gray;
+                    }
+
+                    .values {
+                      display: flex;
+                      gap: .2rem;
+
+                      font-size: smaller;
+
+                      >div {
+                        border-radius: 3px;
+
+                        p {
+                          padding: 0;
+                          margin: .2rem;
+                        }
+                      }
+
+                      .discount {
+                        background-color: #788795;
+                        color: white;
+                      }
+
+                      .price {
+                        border: 1px solid #788795;
+                        background-color: white;
+                        color: rgb(87, 86, 86);
+                      }
+                    }
+                  }
+
+                  &:hover {
+                    .body-card {
+                      .values {
+                        .price {
+                          background-color: #712cf9;
+                          color: white;
+                        }
+                      }
+                    }
+                  }
+                }
+
               }
             }
 
@@ -131,8 +222,22 @@
           }
 
         }
-      }
 
+        &:hover .menu-triangle {
+          visibility: visible;
+          opacity: 1;
+
+          transform: translateY(-9px)
+        }
+
+        &:hover .sub-menu {
+          visibility: visible;
+
+          transform: translateY(-3.5rem);
+          opacity: 1;
+        }
+
+      }
     }
 
     .menu-logo {

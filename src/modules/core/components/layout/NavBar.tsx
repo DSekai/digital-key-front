@@ -3,6 +3,7 @@ import Logo from '../../../../assets/icons/logo'
 import { DropDown } from '../../../../assets/icons/DropDown'
 import { Cart } from '../../../../assets/icons/Cart'
 import { ArrowRight, ArrowRightV2 } from '../../../../assets/icons/ArrowRight'
+import { Category } from './Category'
 
 export const Navbar = () => {
   return (
@@ -24,6 +25,7 @@ export const Navbar = () => {
                   <ArrowRight className='arrow-simple' />
                   <ArrowRightV2 className='arrow-double' />
                 </div>
+                <Category title='Best Games The all times' />
               </div>
               <div className="selection">
                 <p>otro ma</p>
@@ -38,6 +40,7 @@ export const Navbar = () => {
             <p>About</p>
             <DropDown width={"1rem"} />
             <span className='menu-triangle'></span>
+            <div className="sub-menu"></div>
           </div>
           <div>
             <p>Community</p>
