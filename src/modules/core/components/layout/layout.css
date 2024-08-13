@@ -72,7 +72,7 @@
           position: absolute;
           z-index: 2;
           width: 14.3rem;
-          background-color: #ffffffc9;
+          background-color: #ffffffef;
           top: 6.84rem;
           color: black;
           opacity: 0;
@@ -80,140 +80,175 @@
           display: flex;
           visibility: hidden;
           flex-direction: column;
-          padding: .5em .2em;
+          padding: .5em 0;
 
           transition: transform 250ms, opacity 1s;
 
           .selection {
-            display: flex;
+            /* display: flex;
             justify-content: space-between;
 
-            position: relative;
+            position: relative; */
+
+            padding: 0 0.4rem;
+            background-color: #ffffffef;
 
             &:hover {
-              background-color: #E6E6E6;
+              .container {
+                .menu-category {
+                  display: flex;
+                }
+              }
+            }
 
-              .arrow-simple {
-                display: none;
+            .container {
+              display: flex;
+              justify-content: space-between;
+              padding: .2rem;
+
+              position: relative;
+
+              &:hover {
+                background-color: #E6E6E6;
+
+                .arrow-simple {
+                  display: none;
+                }
+
+                .arrow-double {
+                  display: block;
+                }
+
+                /* .menu-category {
+                  display: flex;
+                } */
+
               }
 
-              .arrow-double {
-                display: block;
+              >p {
+                margin: 0;
+                padding: 0.2em .4em;
+                font-size: 15px;
+              }
+
+              >div {
+                display: flex;
+                align-items: center;
+                height: 100%;
+
+                >svg {
+                  height: 75%;
+                }
+
+                .arrow-simple {
+                  display: block;
+                }
+
+                .arrow-double {
+                  display: none;
+                }
               }
 
               .menu-category {
-                display: flex;
-              }
-
-            }
-
-            >p {
-              margin: 0;
-              padding: 0.2em .4em;
-              font-size: 15px;
-            }
-
-            >div {
-              display: flex;
-              align-items: center;
-              height: 100%;
-
-              >svg {
-                height: 75%;
-              }
-
-              .arrow-simple {
-                display: block;
-              }
-
-              .arrow-double {
                 display: none;
-              }
-            }
+                flex-direction: column;
+                position: absolute;
+                left: 101%;
+                top: -.5rem;
+                place-content: center;
 
-            .menu-category {
-              display: none;
-              flex-direction: column;
-              position: absolute;
-              left: 101%;
-              top: -.5rem;
-              place-content: center;
+                height: 100%;
+                background-color: #E6E6E6;
+                min-height: 469px;
+                color: black;
 
-              height: 100%;
-              background-color: #E6E6E6;
-              min-height: 469px;
-              color: black;
+                padding: 0 48px 10px;
 
-              padding: 0 48px 10px;
+                .products {
+                  display: grid;
+                  grid-template-columns: repeat(3, 1fr);
+                  gap: 1rem;
 
-              .products {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 1rem;
+                  .card {
+                    width: 12.25rem;
 
-                .card {
-                  width: 12.25rem;
-
-                  .header-card {
-                    background: green;
-                    height: 110px;
-                  }
-
-                  .body-card {
-                    background-color: #dad9d9;
-                    display: flex;
-                    justify-content: space-between;
-                    height: 36px;
-                    /* padding: .35rem .2rem; */
-                    padding: 0 .4rem;
-                    align-items: center;
-
-                    .plataforms {
-                      color: gray;
+                    .header-card {
+                      background: green;
+                      height: 110px;
                     }
 
-                    .values {
-                      display: flex;
-                      gap: .2rem;
-
-                      font-size: smaller;
-
-                      >div {
-                        border-radius: 3px;
-
-                        p {
-                          padding: 0;
-                          margin: .2rem;
-                        }
-                      }
-
-                      .discount {
-                        background-color: #788795;
-                        color: white;
-                      }
-
-                      .price {
-                        border: 1px solid #788795;
-                        background-color: white;
-                        color: rgb(87, 86, 86);
-                      }
-                    }
-                  }
-
-                  &:hover {
                     .body-card {
+                      background-color: #dad9d9;
+                      display: flex;
+                      justify-content: space-between;
+                      height: 36px;
+                      /* padding: .35rem .2rem; */
+                      padding: 0 .4rem;
+                      align-items: center;
+
+                      .plataforms {
+                        color: gray;
+                      }
+
                       .values {
-                        .price {
-                          background-color: #712cf9;
+                        display: flex;
+                        gap: .2rem;
+
+                        font-size: smaller;
+
+                        >div {
+                          border-radius: 3px;
+
+                          p {
+                            padding: 0;
+                            margin: .2rem;
+                          }
+                        }
+
+                        .discount {
+                          background-color: #788795;
                           color: white;
                         }
+
+                        .price {
+                          border: 1px solid #788795;
+                          background-color: white;
+                          color: rgb(87, 86, 86);
+                        }
+                      }
+                    }
+
+                    &:hover {
+                      .body-card {
+                        .values {
+                          .price {
+                            background-color: #712cf9;
+                            color: white;
+                          }
+                        }
                       }
                     }
                   }
+
                 }
 
+                .button {
+                  margin-top: 1rem;
+                  text-align: center;
+                  background-color: white;
+                  width: 100%;
+
+                  border-radius: 3px;
+                  border: 1px solid black;
+
+                  &:hover {
+                    background-color: rgb(192, 192, 192);
+                  }
+                }
               }
+
             }
+
 
           }
 
@@ -270,4 +305,11 @@
     }
 
   }
+}
+
+main {
+  max-width: 73rem;
+  background-color: red;
+  padding: 80px 16px 0;
+  margin: 0 auto;
 }

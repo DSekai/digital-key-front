@@ -20,18 +20,23 @@ export const Navbar = () => {
             <span className='menu-triangle active'></span>
             <div className="sub-menu">
               <div className="selection top">
-                <p>Best Games</p>
-                <div>
-                  <ArrowRight className='arrow-simple' />
-                  <ArrowRightV2 className='arrow-double' />
+                <div className="container">
+                  <p>Best Games</p>
+                  <div>
+                    <ArrowRight className='arrow-simple' />
+                    <ArrowRightV2 className='arrow-double' />
+                  </div>
+                  <Category title='Best Games The all times' />
                 </div>
-                <Category title='Best Games The all times' />
               </div>
               <div className="selection">
-                <p>otro ma</p>
-                <div>
-                  <ArrowRight className='arrow-simple' />
-                  <ArrowRightV2 className='arrow-double' />
+                <div className="container">
+                  <p>otro ma</p>
+                  <div>
+                    <ArrowRight className='arrow-simple' />
+                    <ArrowRightV2 className='arrow-double' />
+                  </div>
+
                 </div>
               </div>
             </div>
@@ -45,10 +50,14 @@ export const Navbar = () => {
           <div>
             <p>Community</p>
             <DropDown width={"1rem"} />
+            <span className='menu-triangle'></span>
+            <div className="sub-menu"></div>
           </div>
           <div className="">
             <p>Support</p>
             <DropDown width={"1rem"} />
+            <span className='menu-triangle'></span>
+            <div className="sub-menu"></div>
           </div>
           <p>Sign In</p>
         </div>
