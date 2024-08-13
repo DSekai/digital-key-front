@@ -14,6 +14,9 @@ export const Category = ({ title }: Category) => {
         <Card />
         <Card />
       </div>
+      <div className="button">
+        <p>View All</p>
+      </div>
     </div>
   )
 }
