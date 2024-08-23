@@ -1,7 +1,7 @@
 
 export const Card = () => {
   return (
-    <div className="card">
+    <div className="card-navbar">
       <header className="header-card">
         <img src="" alt="product-image" />
       </header>
