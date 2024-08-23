@@ -169,7 +169,7 @@
                   grid-template-columns: repeat(3, 1fr);
                   gap: 1rem;
 
-                  .card {
+                  .card-navbar {
                     width: 12.25rem;
 
                     .header-card {
@@ -305,11 +305,4 @@
     }
 
   }
-}
-
-main {
-  max-width: 73rem;
-  background-color: red;
-  padding: 80px 16px 0;
-  margin: 0 auto;
 }
